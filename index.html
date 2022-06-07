@@ -50,7 +50,7 @@
       <th scope="row">${user.name}</th>
       <td>${user.username}</td>
       <td>${user.email}</td>
-      <td>${Object.values(user.address).filter(value => typeof value !== "object").join(", ")/*since address is a nested object*/}</td>     
+      <td>${Object.values(user.address).filter/*since there is another nested object inside address, which is already nested*/ (value => typeof value !== "object").join(", ")/*since address is a nested object*/}</td>     
       <td>${Object.values(user.company).join(", ")/*since company is a nested object too*/}</td>     
       <td>${user.phone}</td>
       <td>${user.website}</td>
