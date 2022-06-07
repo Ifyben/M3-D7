@@ -54,7 +54,10 @@
       <td>${Object.values(user.company).join(", ")/*since company is a nested object too*/}</td>     
       <td>${user.phone}</td>
       <td>${user.website}</td>
-    </tr>`)}
+    </tr>`)
+    .join("") /*Map returns an array and we are passing an array inside a string. Array consists of elements 
+              that are comma-separated. In other to avoid the commas from being displayed, we join our array at the 
+              end to a sting, removing commas by just passing an empty string*/}
     
   </tbody>
 </table>`; 
