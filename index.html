@@ -23,7 +23,7 @@
               class="form-control search-input w-25 ml-2"
             />
 
-            <button class="btn btn-primary ml-25">Submit</button>
+            <button class="btn btn-primary ml-2">ASC</button>
             <div class="user my-4"></div>
         </div>
     </div>
@@ -84,6 +84,19 @@
                     console.log(filtered);
                     displayData(filtered);
                 });
+                const btn = document.querySelector(".btn") 
+                btn.addEventListener("click", (e) => {
+                    const sorted = data.sort((a, b) => 
+                    a.name.toLowerCase() > b.name.toLowerCase()?1:a.name.toLowerCase() < b.name.toLowerCase()?-1:0);
+                    console.log(sorted);
+                    if(e.target.innerHTML === "ASC") {
+                        e.target.innerHTML = "DESC"
+                        displayData(sorted);
+                    } else {
+                        e.target.innerHTML = "ASC"
+                        displayData(sorted.reverse()); 
+                    }
+                })
             }
         } catch (error) {
             console.log(error);
