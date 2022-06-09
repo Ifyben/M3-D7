@@ -32,6 +32,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
 <script>
+    const namesOnly = (data) => {
+        const names = data.map((user) => user.name);
+        console.log(names) 
+    }
     const displayData = (data) => {
         const container = document.querySelector(".user") 
         const table = `<table class="table table-striped">
@@ -70,6 +74,8 @@
             if(response.ok) {
                 const data = await response.json();
                 console.log(data);
+                namesOnly(data);
+
                 displayData(data);
                 const input = document.querySelector(".search-input");
                 input.addEventListener("input", function(e) { 
