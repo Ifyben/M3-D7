@@ -52,7 +52,7 @@
   </thead>
   <tbody>
     ${data.map(user => `<tr>
-      <th scope="row">${user.name}</th>
+      <th scope="row"><a href="./details.html?userId=${user.id}" >${user.name}</a></th>
       <td>${user.username}</td>
       <td>${user.email}</td>
       <td>${Object.values(user.address).filter/*since there is another nested object inside address, which is already nested*/ (value => typeof value !== "object").join(", ")/*since address is a nested object*/}</td>     
